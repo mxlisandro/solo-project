@@ -21,6 +21,7 @@
   "homepage": "https://github.com/mxlisandro/solo-project#readme",
   "dependencies": {
     "express": "^4.18.2",
+    "file-loader": "^6.2.0",
     "react": "^18.2.0",
     "react-calendar": "^4.3.0",
     "react-dom": "^18.2.0",
@@ -32,6 +33,8 @@
     "@babel/preset-react": "^7.22.5",
     "babel-loader": "^9.1.2",
     "html-webpack-plugin": "^5.5.3",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "wepback": "^1.0.0"
   }
 }
