@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const userController = require('./controllers/userController');
 const cookieController = require('./controllers/cookieController');
 const sessionController = require('./controllers/sessionController');
+const treeController = require('./controllers/treeController')
 
 const PORT = 3000;
 const MONGO_URI =
@@ -50,6 +51,10 @@ app.post('/signup', userController.createUser , cookieController.setSSIDCookie ,
 //login
 app.post('/login', userController.verifyUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
   // what should happen here on successful log in?
+  return res.status(200).sendFile(path.join(__dirname, '../client/index.html'))
+});
+//addTree
+app.post('/addTree', treeController.createTree, treeController.getAllTrees, (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'))
 });
 

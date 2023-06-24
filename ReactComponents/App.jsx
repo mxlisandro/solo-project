@@ -33,6 +33,6 @@ export default function MyApp() {
         <span className='bold'>Selected Date:</span>{' '}
         {value.toDateString()}
       </p>
-      </div>
+    </div>
   );
 }

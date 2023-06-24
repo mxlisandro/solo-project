@@ -20,6 +20,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./ReactComponents/TreeContainer.jsx":
+/*!*******************************************!*\
+  !*** ./ReactComponents/TreeContainer.jsx ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nconst TreeRender = () => {\n  const [users, setUsers] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);\n  const fetchTreeData = () => {\n    fetch(\"/addTree\").then(response => {\n      return response.json();\n    }).then(data => {\n      setUsers(data);\n    });\n  };\n  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {\n    fetchUserData();\n  }, []);\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", null, users.map(user => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"li\", {\n    key: user.id\n  }, user.name)));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TreeRender);\n\n//# sourceURL=webpack://solo-project/./ReactComponents/TreeContainer.jsx?");
+
+/***/ }),
+
 /***/ "./index.js":
 /*!******************!*\
   !*** ./index.js ***!
@@ -27,7 +38,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n/* harmony import */ var _ReactComponents_App_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReactComponents/App.jsx */ \"./ReactComponents/App.jsx\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_3__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ReactComponents_App_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), document.querySelector('#react-root'));\n// ReactDOM.render(<h1>hola cacas</h1> , document.querySelector('#react-root'));\n\n//# sourceURL=webpack://solo-project/./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n/* harmony import */ var _ReactComponents_App_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReactComponents/App.jsx */ \"./ReactComponents/App.jsx\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var _ReactComponents_TreeContainer_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ReactComponents/TreeContainer.jsx */ \"./ReactComponents/TreeContainer.jsx\");\n\n\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_3__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ReactComponents_App_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), document.querySelector('#react-root'));\nreact_dom__WEBPACK_IMPORTED_MODULE_3__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ReactComponents_TreeContainer_jsx__WEBPACK_IMPORTED_MODULE_4__[\"default\"], null), document.querySelector('#treeDiv'));\n// ReactDOM.render(<h1>hola cacas</h1> , document.querySelector('#react-root'));\n\n//# sourceURL=webpack://solo-project/./index.js?");
 
 /***/ }),
 

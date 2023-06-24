@@ -9,5 +9,15 @@
     <h1>Solo Project Prod</h1>
     <div id="react-root"></div>
     <script type="module" src="build/bundle.js"></script>
+    <div>
+      <form method='POST' action='/addTree'>
+        <label for="varName">Variety Name: </label>
+        <input id="varName" name="varietyName" type="text" placeholder="Variety Name"></input>
+        <label for="fertDate">Last Fertilization: </label>
+        <input id="fertDate" name="lastFertDate" type="date" placeholder="lastFertDate"></input>
+        <input type="submit" value="Add Tree"></input>
+      </form>
+      </div>
+    <div id="treeDiv"></div>
   </body>
 </html>
