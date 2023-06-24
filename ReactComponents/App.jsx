@@ -14,6 +14,8 @@
 // }
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
+// import 'react-calendar/dist/Calendar.css';
+// import './App.css';
 
 export default function MyApp() {
   const [value, setValue] = useState(new Date());
@@ -23,9 +25,14 @@ export default function MyApp() {
   }
 
   return (
+    <div>
     <Calendar
       onChange={onChange}
-      value={value}
-    />
+      value={value} />
+      <p className='text-center'>
+        <span className='bold'>Selected Date:</span>{' '}
+        {value.toDateString()}
+      </p>
+      </div>
   );
 }

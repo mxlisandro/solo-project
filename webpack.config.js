@@ -11,14 +11,21 @@ module.exports = {
       devServer: {
         static: {
           directory: path.resolve(__dirname, 'build'),
-          publicPath: 'build/bundle.js'
+          publicPath: '/build'
         },
         compress: true,
         port: 8080,
+        proxy: {
+          '/api': 'http://localhost:3000'
+        }
       },
-      plugins: [new HtmlWebpackPlugin()],
+      plugins: [new HtmlWebpackPlugin({
+        title: 'development',
+        // template: path.join(__dirname, 'index.html')
+        templateContent: ({HtmlWebpackPlugin}) => '<html><head></head><body><h1>Solo Project Dev</h1><div id="react-root"></div></body></html>'
+      })],
       //webpacks default is production
-      mode: 'production',
+      mode: 'development',
       module: {
         rules: [
         {
@@ -35,7 +42,7 @@ module.exports = {
           }
         },
         {
-            test: /\.s[ac]ss$/i,
+            test: /\.s[ac]ss$/,
             // exclude: /node_modules/,
             use: [
               // Creates `style` nodes from JS strings
