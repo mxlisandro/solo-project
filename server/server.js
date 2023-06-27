@@ -54,8 +54,11 @@ app.post('/login', userController.verifyUser, cookieController.setSSIDCookie, se
   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'))
 });
 //addTree
-app.post('/addTree', treeController.createTree, treeController.getAllTrees, (req, res) => {
+app.post('/addTree', treeController.createTree, (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'))
+});
+app.get('/addTree/trees', treeController.getAllTrees, (req, res) => {
+  return res.json(res.locals);
 });
 
 //404 handler

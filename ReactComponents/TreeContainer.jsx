@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from 'react';
 
 const TreeRender = () => {
-    const [users, setUsers] = useState([])
+    const [data, setData] = useState([])
   
-    const fetchTreeData = () => {
-      fetch("/addTree/trees")
-        .then(response => {
-          return response.json()
-        })
-        .then(data => {
-          setUsers(data)
-        })
-    }
-    useEffect(() => {
-        fetchUserData()
-      }, [])
+     useEffect(() => {
+        const fetchTreeData = async () => {
+            const data = await (
+                await fetch("/addTree/trees")).json();
+                setData(data);
+      }; 
+      
+    fetchTreeData();
+}, [])
     
     return (
       <div>
-        {users.map(user => (
-            <li key={user.id}>{user.name}</li>))}
+        {data[`${users}`].map(el => {
+            return <li key={`${el._id}`}>{`${el.varietyName} - ${el.lastFertDate}`}</li>
+        })}
       </div>
     );
   }
