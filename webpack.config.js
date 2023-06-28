@@ -42,7 +42,7 @@ module.exports = {
           }
         },
         {
-            test: /\.s[ac]ss$/,
+            test: /\.css$/i,
             // exclude: /node_modules/,
             use: [
               // Creates `style` nodes from JS strings
@@ -50,7 +50,7 @@ module.exports = {
               // Translates CSS into CommonJS
               "css-loader",
               // Compiles Sass to CSS
-              "sass-loader",
+              // "sass-loader",
             ],
           },
           {

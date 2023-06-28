@@ -2,13 +2,15 @@ const Tree = require('../models/treeModel');
 const treeController = {};
 
 treeController.getAllTrees = (req, res, next) => {
-    Tree.find({}, (err, users) => {
+    Tree.find({}, (err, trees) => {
       // if a database error occurs, call next with the error message passed in
       // for the express global error handler to catch
-      if (err) return next('Error in userController.getAllUsers: ' + JSON.stringify(err));
+      if (err) return next('Error in treeController.getAllTrees: ' + JSON.stringify(err));
       
       // store retrieved users into res.locals and move on to next middleware
-      res.locals.users = users;
+      res.locals.trees = trees;
+      console.log('saved db trees in locals');
+      console.log(res.locals.trees);
       return next();
     });
   };    

@@ -32,6 +32,10 @@ app.use(express.urlencoded());
 
 app.use('/client', express.static(path.resolve(__dirname, '../client')));
 
+app.post('/login', userController.verifyUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
+  // what should happen here on successful log in?
+  return res.status(200).sendFile(path.join(__dirname, '../client/index.html'))
+});
 
 app.use('/build', express.static(path.join(__dirname, '../build')));
 // serve login.html on the route '/'
@@ -48,18 +52,21 @@ app.post('/signup', userController.createUser , cookieController.setSSIDCookie ,
   res.redirect('/');
 });
 
-//login
-app.post('/login', userController.verifyUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
-  // what should happen here on successful log in?
-  return res.status(200).sendFile(path.join(__dirname, '../client/index.html'))
+// //login
+// app.post('/login', userController.verifyUser, cookieController.setSSIDCookie, sessionController.startSession, (req, res) => {
+//   // what should happen here on successful log in?
+//   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'))
+// });
+//addTreea
+app.get('/api/addTree/trees', treeController.getAllTrees, (req, res) => {
+  console.log('trees in final middleware')
+  console.log(res.locals.trees)
+  return res.status(200).json(res.locals.trees);
 });
-//addTree
 app.post('/addTree', treeController.createTree, (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'))
 });
-app.get('/addTree/trees', treeController.getAllTrees, (req, res) => {
-  return res.json(res.locals);
-});
+
 
 //404 handler
 app.use('*', (req,res) => {

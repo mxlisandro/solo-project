@@ -26,6 +26,7 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "file-loader": "^6.2.0",
+    "moment": "^2.29.4",
     "mongodb": "^5.6.0",
     "mongoose": "^6.7.5",
     "nodemon": "^2.0.22",
@@ -39,7 +40,10 @@
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
     "babel-loader": "^9.1.2",
+    "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
     "wepback": "^1.0.0"
