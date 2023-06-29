@@ -1,15 +1,18 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Solo Project</title>
+  <link rel="stylesheet" type="text/css" href="./client/login.css">
+  <title>Solo-Project-LoginPage</title>
 </head>
 <body>
-  Login
-  <form method="POST" action='/login'>
-    <input name="username" type="text" placeholder="username"></input>
-    <input name="password" type="password" placeholder="password"></input>
-    <input type='submit' value="login">
-  </form>
-  <a href='./signup'>Sign up</a>
+  <h1>Login</h1>
+  <div class="box">
+    <form method="POST" action='/login'>
+      <input class="email" name="username" type="text" placeholder="username"></input>
+      <input class="email" name="password" type="password" placeholder="password"></input>
+      <input class="btn" type='submit' value="login">
+      <a href='./signup'><button class="btn">Sign Up</button></a>
+    </form>
+  </div>
 </body>
 </html>

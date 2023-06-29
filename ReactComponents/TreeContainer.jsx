@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import moment from 'moment';
 
 
 
@@ -23,6 +24,11 @@ const TreeRender = () => {
             }) 
         });
       }
+      const dateArray = [];
+      data.map((tree) => {
+        const newStr = tree.lastFertDate.replace(/-/g, "");
+        dateArray.push(newStr);
+      });
 
     return (
       <div>
@@ -30,7 +36,7 @@ const TreeRender = () => {
             <li key={index}> 
                 <div>Variety Name: {`${tree.varietyName}`}</div>
                 <div>Last fertilization date: {`${tree.lastFertDate}`}</div>
-                <div>Next fertilization date: {`${tree.lastFertDate}`}</div>
+                <div>Next fertilization date: {`${moment(dateArray[index], "YYYYMMDD").add(14, 'd')}`}</div>
             </li>
          )}      
       </div>

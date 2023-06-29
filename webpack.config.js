@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 module.exports = {
     entry: './index.js',
@@ -23,9 +24,16 @@ module.exports = {
         title: 'development',
         // template: path.join(__dirname, 'index.html')
         templateContent: ({HtmlWebpackPlugin}) => '<html><head></head><body><h1>Solo Project Dev</h1><div id="react-root"></div></body></html>'
-      })],
+      }),
+      new MomentLocalesPlugin(),
+
+        // Or: To strip all locales except “en”, “es-us” and “ru”
+        // (“en” is built into Moment and can’t be removed)
+        new MomentLocalesPlugin({
+            localesToKeep: ['es-us', 'ru'],
+        })],
       //webpacks default is production
-      mode: 'development',
+      mode: 'production',
       module: {
         rules: [
         {
