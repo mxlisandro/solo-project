@@ -31,13 +31,14 @@ const TreeRender = () => {
       });
 
     return (
-      <div>
+        
+      <div style={{textAlign: 'center'}}>
         {data.map((tree, index) =>
-            <li key={index}> 
-                <div>Variety Name: {`${tree.varietyName}`}</div>
-                <div>Last fertilization date: {`${tree.lastFertDate}`}</div>
-                <div>Next fertilization date: {`${moment(dateArray[index], "YYYYMMDD").add(14, 'd')}`}</div>
-            </li>
+        <ul style={{listStylePosition: "inside"}} key={index}>
+                <li>Variety Name: {`${tree.varietyName}`}</li>
+                <li>Last fertilization date: {`${tree.lastFertDate}`}</li>
+                <li>Next fertilization date: {`${moment(dateArray[index], "YYYYMMDD").add(14, 'd').format("YYYY-MM-DD")}`}</li>
+        </ul>
          )}      
       </div>
 

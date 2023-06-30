@@ -5,7 +5,7 @@ import MyCalendar from './MyCalendar.jsx';
 export default function App () {
   return (
     <div>
-      <div><MyCalendar/></div>
+      <div style={{paddingLeft: 150}}><MyCalendar/></div>
       <div><TreeRender/></div>
     </div>
   );

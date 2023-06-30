@@ -12,7 +12,7 @@ module.exports = {
       devServer: {
         static: {
           directory: path.resolve(__dirname, 'build'),
-          publicPath: '/build'
+          publicPath: '/'
         },
         compress: true,
         port: 8080,
@@ -22,8 +22,8 @@ module.exports = {
       },
       plugins: [new HtmlWebpackPlugin({
         title: 'development',
-        // template: path.join(__dirname, 'index.html')
-        templateContent: ({HtmlWebpackPlugin}) => '<html><head></head><body><h1>Solo Project Dev</h1><div id="react-root"></div></body></html>'
+        template: path.join(__dirname, './client/index.html')
+        // templateContent: ({HtmlWebpackPlugin}) => '<html><head></head><body><h1>Solo Project Dev</h1><div id="react-root"></div></body></html>'
       }),
       new MomentLocalesPlugin(),
 

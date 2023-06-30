@@ -9,8 +9,8 @@ treeController.getAllTrees = (req, res, next) => {
       
       // store retrieved users into res.locals and move on to next middleware
       res.locals.trees = trees;
-      console.log('saved db trees in locals');
-      console.log(res.locals.trees);
+      // console.log('saved db trees in locals');
+      // console.log(res.locals.trees);
       return next();
     });
   };    
@@ -24,10 +24,21 @@ treeController.createTree = (req, res, next) => {
   }
   else{
     res.locals.user = user;
-    console.log('created tree');
+    // console.log('created tree');
     return next()
   }
   });
 };
+
+treeController.deleteTree = (req, res, next) => {
+  console.log(req.query);
+  const {varietyName} = req.query;
+  if (!varietyName) return next ('Missing a value in treeController.deleteTree');
+  Tree.findOneAndDelete({varietyName: varietyName}, (err,tree) => {
+    if(err) return next('Error in treeController.deleteTree' + JSON.stringify(err));
+    return next();
+    })
+;}
+
 
 module.exports = treeController;

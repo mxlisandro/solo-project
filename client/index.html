@@ -7,10 +7,8 @@
     <title>react-calendar sample page</title>
   </head>
   <body>
-    <h1>Solo Project Prod</h1>
-    <div id="react-root"></div>
-    <script type="module" src="build/bundle.js"></script>
-    <div>
+    <h1 style="text-align: center;">Solo Project Prod</h1>
+    <div style="display: block; align-items:center;">
       <form method='POST' action='/addTree'>
         <label for="varName">Variety Name: </label>
         <input id="varName" name="varietyName" type="text" placeholder="Variety Name"></input>
@@ -19,6 +17,9 @@
         <input type="submit" value="Add Tree"></input>
       </form>
       </div>
-    <div id="treeDiv"></div>
+      <div style="display: flexbox; align-items: center;" id="react-root"></div>
+    <script type="module" src="build/bundle.js"></script>
+    <!-- <div id="treeDiv"></div> -->
+    <a href='./delete'><button class="btn">I need to delete a Tree</button></a>
   </body>
 </html>

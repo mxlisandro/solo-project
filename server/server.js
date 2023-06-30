@@ -46,6 +46,10 @@ app.get('/', cookieController.setCookie, (req, res) => {
 app.get('/signup',  (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/signup.html'));
 });
+//delete
+app.get('/delete', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/delete.html'))
+})
 app.post('/signup', userController.createUser , cookieController.setSSIDCookie , sessionController.startSession, (req, res) => {
   // what should happen here on successful sign up?
   //sends file to client sendFile is a biult in method
@@ -59,13 +63,24 @@ app.post('/signup', userController.createUser , cookieController.setSSIDCookie ,
 // });
 //addTreea
 app.get('/api/addTree/trees', treeController.getAllTrees, (req, res) => {
-  console.log('trees in final middleware')
-  console.log(res.locals.trees)
+  // console.log('trees in final middleware')
+  // console.log(res.locals.trees)
   return res.status(200).json(res.locals.trees);
 });
+
+app.get('/deleteTree', treeController.deleteTree, (req, res) => {
+  // console.log('trees in final middleware')
+  // console.log(res.locals.trees)
+  console.log(__dirname);
+  return res.status(200).sendFile('/Users/lisandroolivares/solo-project/client/index.html')
+  // path.join(__dirname, '..','client', 'index.html')
+  // return res.redirect('/login');
+});
+
 app.post('/addTree', treeController.createTree, (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'))
 });
+
 
 
 //404 handler

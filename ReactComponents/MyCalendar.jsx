@@ -10,7 +10,7 @@ export default function MyCalendar() {
   }
 
   return (
-    <div>
+    <div style={{textAlign: 'center'}}>
     <Calendar
       onChange={onChange}
       value={value} />
