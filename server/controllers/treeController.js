@@ -40,5 +40,17 @@ treeController.deleteTree = (req, res, next) => {
     })
 ;}
 
+treeController.updateTree = (req, res, next) => {
+  console.log(req.query);
+  const {varietyName, updatedFertDate} = req.query;
+  console.log(varietyName)
+  if (!varietyName || !updatedFertDate) return next ('Missing a value in treeController.updateTree');
+  Tree.findOneAndUpdate({varietyName: varietyName}, {lastFertDate: updatedFertDate},{new:true}, (err,tree) => {
+    if(err) return next('Error in treeController.deleteTree' + JSON.stringify(err));
+    console.log('Tree was found and updated')
+    return next();
+    });
+  }
+
 
 module.exports = treeController;

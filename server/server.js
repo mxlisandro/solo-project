@@ -71,7 +71,16 @@ app.get('/api/addTree/trees', treeController.getAllTrees, (req, res) => {
 app.get('/deleteTree', treeController.deleteTree, (req, res) => {
   // console.log('trees in final middleware')
   // console.log(res.locals.trees)
-  console.log(__dirname);
+  // console.log(__dirname);
+  return res.status(200).sendFile('/Users/lisandroolivares/solo-project/client/index.html')
+  // path.join(__dirname, '..','client', 'index.html')
+  // return res.redirect('/login');
+});
+app.get('/updateTree', treeController.updateTree, (req, res) => {
+  // console.log('trees in final middleware')
+  // console.log(res.locals.trees)
+  // console.log(__dirname);
+  console.log('attempting to send back index file')
   return res.status(200).sendFile('/Users/lisandroolivares/solo-project/client/index.html')
   // path.join(__dirname, '..','client', 'index.html')
   // return res.redirect('/login');
