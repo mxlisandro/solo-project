@@ -79,6 +79,7 @@ userController.verifyUser = (req, res, next) => {
         else{
             //password did match, save user for following middlewares
             res.locals.user = user;
+            
             return next();
         }
       })
