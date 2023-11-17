@@ -8,7 +8,11 @@ This is a project created with the goal of keeping track of the different fruit 
 Before you start using the Tree Fertilization Schedule Tracker, you need to install it on your system. Here's how you can do it:
 
 > git clone https://github.com/yourusername/your-repo-name.git
+
+<!-- -->
 > cd your-repo-name
+
+<!-- -->
 > npm install
 
 ## Usage
